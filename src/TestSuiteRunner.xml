@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="eBay Related Best Seller Products Suite" verbose="1" thread-count="1">
+
+    <!-- ── Navigation Tests ─────────────────────────────────────────────── -->
+    <test name="Navigation Tests">
+        <classes>
+            <class name="tests.EbayHomePageNavigationTest"/>
+        </classes>
+    </test>
+
+    <!-- ── Related Products Tests ───────────────────────────────────────── -->
+    <test name="Related Products Tests">
+        <classes>
+            <class name="tests.EbayRelatedProductsTest"/>
+        </classes>
+    </test>
+
+    <!-- ── Negative and Edge Case Tests ─────────────────────────────────── -->
+<!--    <test name="Negative and Edge Case Tests">-->
+<!--        <classes>-->
+<!--            <class name="tests.EbayNegativeEdgeCaseTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+</suite>
