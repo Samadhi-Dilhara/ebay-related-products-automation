@@ -17,11 +17,4 @@
         </classes>
     </test>
 
-    <!-- ── Negative and Edge Case Tests ─────────────────────────────────── -->
-<!--    <test name="Negative and Edge Case Tests">-->
-<!--        <classes>-->
-<!--            <class name="tests.EbayNegativeEdgeCaseTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
 </suite>
