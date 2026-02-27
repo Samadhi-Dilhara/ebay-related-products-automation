@@ -33,7 +33,7 @@ public class EbayProductPage {
         this.relatedSectionHeading = page.locator("//h2[contains(text(),'Similar')]");
         this.relatedProductsGrid = page.locator("div[style*='grid-template-columns']:has(section)");
         this.relatedProducts = relatedProductsGrid.locator("section");
-        this.relatedProductLinks = page.locator("//h2[normalize-space()='Similar items']/ancestor::section//a[contains(@class,'cFmJ') and contains(@href,'/itm/')]");
+        this.relatedProductLinks = page.locator("//h2[normalize-space()='Similar items']/following::a[contains(@href,'/itm/')][@aria-label]");
         this.breadcrumbCategories = page.locator("//a[contains(@class,'seo-breadcrumb-text')]/span");
         this.mainProductPrice = page.locator("[data-testid='ux-textual-display'] .ux-textspans--SECONDARY.ux-textspans--BOLD");
         this.relatedProductPrices = page.locator("//h2[text()='Similar items']/ancestor::section[1]//div[contains(@class,'v_81')]//div[contains(@class,'iALQ')]/span[@role='text']");

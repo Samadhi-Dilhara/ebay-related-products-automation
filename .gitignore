@@ -1,0 +1,8 @@
+target/
+*.class
+.idea/
+*.iml
+screenshots/
+allure-results/
+allure-report/
+test-output/
