@@ -3,14 +3,12 @@
 
 <suite name="eBay Related Best Seller Products Suite" verbose="1" thread-count="1">
 
-    <!-- ── Navigation Tests ─────────────────────────────────────────────── -->
     <test name="Navigation Tests">
         <classes>
             <class name="tests.EbayHomePageNavigationTest"/>
         </classes>
     </test>
 
-    <!-- ── Related Products Tests ───────────────────────────────────────── -->
     <test name="Related Products Tests">
         <classes>
             <class name="tests.EbayRelatedProductsTest"/>

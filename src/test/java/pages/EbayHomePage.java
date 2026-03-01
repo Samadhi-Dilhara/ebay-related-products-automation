@@ -8,8 +8,6 @@ import io.qameta.allure.Allure;
 
 public class EbayHomePage {
     private final Page page;
-
-    // ── Locators ──────────────────────────────────────────────────────────────
     private final Locator searchInput;
     private final Locator searchButton;
     private final Locator ebayLogo;
@@ -17,33 +15,33 @@ public class EbayHomePage {
     public EbayHomePage(Page page) {
         this.page = page;
         this.searchInput = page.locator("#gh-ac");
-        this.searchButton = page.locator("//*[@id=\"gh-search-btn\"]");
+        this.searchButton = page.locator("#gh-search-btn");
         this.ebayLogo = page.getByRole(AriaRole.IMG, new Page.GetByRoleOptions().setName("eBay Home"));
     }
 
-    // ── Actions ───────────────────────────────────────────────────────────────
     public void navigateTo(String url) {
-        Allure.step("Navigating to eBay home: {}" +url);
-        page.navigate(url);
-        page.waitForSelector("#gh-ac",
-                new Page.WaitForSelectorOptions().setState(WaitForSelectorState.VISIBLE));
-        Allure.step("eBay home page loaded.");
+            Allure.step("Navigating to URL: " + url);
+
+            page.navigate(url);
+
+            Allure.step("Waiting for search input visibility...");
+
+            page.waitForSelector("#gh-ac", new Page.WaitForSelectorOptions().setState(WaitForSelectorState.VISIBLE));
+
+            Allure.step("SUCCESS: eBay Home Page Loaded");
     }
 
     public void searchForProduct(String keyword) {
-        Allure.step("Searching for: {}"+keyword);
+        Allure.step("Searching product: " + keyword);
+
         searchInput.fill(keyword);
+        Allure.step("Keyword entered.");
+
         searchButton.click();
+        Allure.step("Search button clicked.");
+
         page.waitForURL("**/sch/**");
-        Allure.step("Search results page loaded.");
-    }
 
-    // ── Verifications ─────────────────────────────────────────────────────────
-    public boolean isHomePageLoaded() {
-        return ebayLogo.isVisible();
-    }
-
-    public boolean isSearchInputVisible() {
-        return searchInput.isVisible();
+        Allure.step("SUCCESS: Search Results Page Loaded");
     }
 }
