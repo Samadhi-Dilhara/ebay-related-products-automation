@@ -12,11 +12,11 @@ import utils.ConfigManager;
 @Feature("Navigation")
 public class EbayHomePageNavigationTest extends BaseTest {
 
-    @Test(priority = 3)
+    @Test
     @Story("Target item found in search results and clicked")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("Verify item 125640279122 can be found in search results and opens the correct product page")
-    public void TC_NAV_003_findAndClickTargetItemFromSearchResults() {
+    @Description("Verify specified can be found in search results and opens the correct product page")
+    public void TC_00_findAndClickTargetItemFromSearchResults() {
 
         Allure.step("Find item in search results"+ConfigManager.TARGET_ITEM_ID);
 

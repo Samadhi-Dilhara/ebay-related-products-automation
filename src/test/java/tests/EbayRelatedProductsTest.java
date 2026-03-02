@@ -14,7 +14,7 @@ import utils.ConfigManager;
 import java.util.List;
 
 @Epic("eBay Wallet - Related Products")
-@Feature("Related Products Section")
+@Feature("Related Products Section Feature verification")
 public class EbayRelatedProductsTest extends BaseTest {
 
     private EbayProductPage productPage;
@@ -26,7 +26,11 @@ public class EbayRelatedProductsTest extends BaseTest {
         System.out.println("Navigating to main product page");
 
         EbayHomePage homePage = new EbayHomePage(page);
+
+        Allure.step("Navigate to: "+ ConfigManager.EBAY_HOME_URL);
         homePage.navigateTo(ConfigManager.EBAY_HOME_URL);
+
+        Allure.step("Search : "+ ConfigManager.SEARCH_KEYWORD);
         homePage.searchForProduct(ConfigManager.SEARCH_KEYWORD);
 
         EbaySearchResultsPage resultsPage = new EbaySearchResultsPage(page);
@@ -42,8 +46,7 @@ public class EbayRelatedProductsTest extends BaseTest {
         System.out.println("Main product page loaded successfully");
     }
 
-    @Test(priority = 1)
-    @Story("Related products section is visible")
+    @Test
     @Severity(SeverityLevel.BLOCKER)
     @Description("Verify Related Products Section Visibility")
     public void TC01_verifyRelatedProductsSectionVisible() {
@@ -57,8 +60,7 @@ public class EbayRelatedProductsTest extends BaseTest {
         System.out.println("Related Products Section is visible");
     }
 
-    @Test(priority = 2)
-    @Story("Related product count does not exceed 6")
+    @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that at most 6 related products are displayed (per spec)")
     public void TC02_verifyRelatedProductCountMaxSix() {
@@ -79,8 +81,7 @@ public class EbayRelatedProductsTest extends BaseTest {
         System.out.println("Related Products count verification passed");
     }
 
-    @Test(priority = 3)
-    @Story("Related products belong to same category")
+    @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify related products belong to same category as main product")
     public void TC03_verifySameCategoryRelatedProducts() {
@@ -118,8 +119,7 @@ public class EbayRelatedProductsTest extends BaseTest {
         System.out.println("Category verification passed for all related products");
     }
 
-    @Test(priority = 4)
-    @Story("Related product prices within allowed range")
+    @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify related products prices are within the allowed range of the main product")
     public void TC04_verifyRelatedProductPriceRange() {
@@ -144,8 +144,7 @@ public class EbayRelatedProductsTest extends BaseTest {
         System.out.println("Related product price range verification passed");
     }
 
-    @Test(priority = 5)
-    @Story("Main product not shown in related products")
+    @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that the main product does not appear under the related products section")
     public void TC05_verifyMainProductNotInRelatedProducts() {
@@ -165,8 +164,7 @@ public class EbayRelatedProductsTest extends BaseTest {
         System.out.println("Main product not present verification passed");
     }
 
-    @Test(priority = 6)
-    @Story("User can navigate to related product pages")
+    @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify user can navigate to a related product page and see product details")
     public void TC06_verifyNavigationToRelatedProductPages() {
